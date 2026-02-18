@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Кулинарный помощник</string>
+    <string name="select_language">Выберите язык:</string>
+    <string name="russian">Русский</string>
+    <string name="english">Английский</string>
+    <string name="spanish">Испанский</string>
+    <string name="start">Начать</string>
+    <string name="filter">Фильтр</string>
+    <string name="all_categories">Все категории</string>
+    <string name="breakfast">Завтрак</string>
+    <string name="lunch">Обед</string>
+    <string name="dinner">Ужин</string>
+    <string name="no_recipes">Рецепты не найдены</string>
+
+    <!-- Названия блюд -->
+    <string name="omelette_name">Классический омлет</string>
+    <string name="borscht_name">Борщ</string>
+    <string name="pasta_name">Паста Карбонара</string>
+
+    <!-- Детали рецептов -->
+    <string name="omelette_details">ИНГРЕДИЕНТЫ:\n• 3 яйца\n• 50мл молока\n• Соль, перец\n• Сливочное масло\n\nПРИГОТОВЛЕНИЕ:\n1. Взбейте яйца с молоком\n2. Добавьте соль и перец\n3. Обжарьте на масле\n4. Подавайте горячим</string>
+
+    <string name="borscht_details">ИНГРЕДИЕНТЫ:\n• 500г говядины\n• 3 свеклы\n• 2 моркови\n• 1 луковица\n• Капуста\n• Томатная паста\n\nПРИГОТОВЛЕНИЕ:\n1. Сварите бульон\n2. Обжарьте овощи\n3. Добавьте капусту\n4. Варите до готовности\n5. Подавайте со сметаной</string>
+
+    <string name="pasta_details">ИНГРЕДИЕНТЫ:\n• 400г пасты\n• 200г бекона\n• 3 яйца\n• Сыр пармезан\n• Черный перец\n\nПРИГОТОВЛЕНИЕ:\n1. Сварите пасту\n2. Обжарьте бекон\n3. Смешайте яйца с сыром\n4. Соедините все\n5. Добавьте перец и подавайте</string>
+
+    <string-array name="categories_array">
+        <item>Все категории</item>
+        <item>Завтрак</item>
+        <item>Обед</item>
+        <item>Ужин</item>
+    </string-array>
+</resources>

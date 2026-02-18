@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cooking Assistant</string>
+    <string name="select_language">Select language:</string>
+    <string name="russian">Russian</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+    <string name="start">Start</string>
+    <string name="filter">Filter</string>
+    <string name="all_categories">All categories</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="no_recipes">No recipes found</string>
+
+    <!-- Recipe names -->
+    <string name="omelette_name">Classic Omelette</string>
+    <string name="borscht_name">Borscht</string>
+    <string name="pasta_name">Carbonara Pasta</string>
+
+    <!-- Recipe details -->
+    <string name="omelette_details">INGREDIENTS:\n• 3 eggs\n• 50ml milk\n• Salt, pepper\n• Butter\n\nSTEPS:\n1. Beat eggs with milk\n2. Add salt and pepper\n3. Fry in butter\n4. Serve hot</string>
+
+    <string name="borscht_details">INGREDIENTS:\n• 500g beef\n• 3 beets\n• 2 carrots\n• 1 onion\n• Cabbage\n• Tomato paste\n\nSTEPS:\n1. Cook broth\n2. Fry vegetables\n3. Add cabbage\n4. Cook until ready\n5. Serve with sour cream</string>
+
+    <string name="pasta_details">INGREDIENTS:\n• 400g pasta\n• 200g bacon\n• 3 eggs\n• Parmesan cheese\n• Black pepper\n\nSTEPS:\n1. Cook pasta\n2. Fry bacon\n3. Mix eggs with cheese\n4. Combine all\n5. Add pepper and serve</string>
+
+    <string-array name="categories_array">
+        <item>All categories</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
+</resources>

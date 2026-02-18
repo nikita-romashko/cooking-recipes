@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asistente de cocina</string>
+    <string name="select_language">Seleccionar idioma:</string>
+    <string name="russian">Ruso</string>
+    <string name="english">Inglés</string>
+    <string name="spanish">Español</string>
+    <string name="start">Comenzar</string>
+    <string name="filter">Filtrar</string>
+    <string name="all_categories">Todas las categorías</string>
+    <string name="breakfast">Desayuno</string>
+    <string name="lunch">Almuerzo</string>
+    <string name="dinner">Cena</string>
+    <string name="no_recipes">No se encontraron recetas</string>
+
+    <!-- Nombres de platos -->
+    <string name="omelette_name">Tortilla clásica</string>
+    <string name="borscht_name">Borscht</string>
+    <string name="pasta_name">Pasta Carbonara</string>
+
+    <!-- Detalles de recetas -->
+    <string name="omelette_details">INGREDIENTES:\n• 3 huevos\n• 50ml leche\n• Sal, pimienta\n• Mantequilla\n\nPREPARACIÓN:\n1. Batir huevos con leche\n2. Añadir sal y pimienta\n3. Freír en mantequilla\n4. Servir caliente</string>
+
+    <string name="borscht_details">INGREDIENTES:\n• 500g carne\n• 3 remolachas\n• 2 zanahorias\n• 1 cebolla\n• Repollo\n• Pasta de tomate\n\nPREPARACIÓN:\n1. Cocer caldo\n2. Freír verduras\n3. Añadir repollo\n4. Cocer hasta listo\n5. Servir con crema</string>
+
+    <string name="pasta_details">INGREDIENTES:\n• 400g pasta\n• 200g tocino\n• 3 huevos\n• Queso parmesano\n• Pimienta negra\n\nPREPARACIÓN:\n1. Cocer pasta\n2. Freír tocino\n3. Mezclar huevos con queso\n4. Combinar todo\n5. Añadir pimienta y servir</string>
+
+    <string-array name="categories_array">
+        <item>Todas las categorías</item>
+        <item>Desayuno</item>
+        <item>Almuerzo</item>
+        <item>Cena</item>
+    </string-array>
+</resources>
