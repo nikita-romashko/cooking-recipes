@@ -1,6 +1,7 @@
 package com.example.cookingrecipes;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,7 @@ public class RecipesActivity extends AppCompatActivity {
     private List<String> recipeCategories;
     private List<String> filteredNames;
     private List<String> filteredDetails;
+    private MediaPlayer transitionSound;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,8 @@ public class RecipesActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         spinnerCategory = findViewById(R.id.spinnerCategory);
         btnFilter = findViewById(R.id.btnFilter);
+
+        transitionSound = MediaPlayer.create(this, R.raw.swap_activity);
 
         recipeNames = new ArrayList<>();
         recipeDetails = new ArrayList<>();
@@ -77,6 +81,26 @@ public class RecipesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                try {
+                    if (transitionSound != null) {
+                        if (transitionSound.isPlaying()) {
+                            transitionSound.stop();
+                            transitionSound.prepare();
+                        }
+                        transitionSound.seekTo(0);
+                        transitionSound.start();
+                    }
+                } catch (Exception e) {
+                    if (transitionSound != null) {
+                        transitionSound.release();
+                    }
+                    transitionSound = MediaPlayer.create(RecipesActivity.this, R.raw.swap_activity);
+                    if (transitionSound != null) {
+                        transitionSound.start();
+                    }
+                }
+
                 String name = filteredNames.get(position);
                 String details = filteredDetails.get(position);
 
@@ -112,5 +136,14 @@ public class RecipesActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, filteredNames);
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (transitionSound != null) {
+            transitionSound.release();
+            transitionSound = null;
+        }
     }
 }

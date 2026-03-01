@@ -31,4 +31,9 @@
         <item>Almuerzo</item>
         <item>Cena</item>
     </string-array>
+
+    <string name="play_recipe_voice">🔊 Escuchar receta</string>
+    <string name="playing">🔊 Reproduciendo...</string>
+    <string name="voice_file_not_found">Archivo de voz no encontrado</string>
+    <string name="voice_playback_error">Error al reproducir</string>
 </resources>

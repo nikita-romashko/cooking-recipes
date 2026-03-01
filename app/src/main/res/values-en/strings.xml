@@ -31,4 +31,9 @@
         <item>Lunch</item>
         <item>Dinner</item>
     </string-array>
+
+    <string name="play_recipe_voice">🔊 Listen to Recipe</string>
+    <string name="playing">🔊 Playing...</string>
+    <string name="voice_file_not_found">Voice file not found</string>
+    <string name="voice_playback_error">Playback error</string>
 </resources>

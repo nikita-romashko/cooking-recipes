@@ -2,10 +2,9 @@ package com.example.cookingrecipes;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     Context context;
@@ -27,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     TextView appName;
     TextView languageTip;
 
-
+    MediaPlayer startSound;
+    MediaPlayer transitionSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         btnStart = findViewById(R.id.btnStart);
         appName = findViewById(R.id.appName);
         languageTip = findViewById(R.id.selectLanguage);
+
+        transitionSound = MediaPlayer.create(this, R.raw.swap_activity);
 
         btnRussian.setOnClickListener(v -> {
             context = LocaleHelper.setLocale(MainActivity.this, "ru");
@@ -69,10 +69,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnStart.setOnClickListener(v -> {
+            try {
+                if (transitionSound != null) {
+                    if (transitionSound.isPlaying()) {
+                        transitionSound.stop();
+                        transitionSound.prepare();
+                    }
+                    transitionSound.seekTo(0);
+                    transitionSound.start();
+                }
+            } catch (Exception e) {
+                if (transitionSound != null) {
+                    transitionSound.release();
+                }
+                transitionSound = MediaPlayer.create(MainActivity.this, R.raw.swap_activity);
+                if (transitionSound != null) {
+                    transitionSound.start();
+                }
+            }
+
             Intent intent = new Intent(MainActivity.this, RecipesActivity.class);
             startActivity(intent);
         });
 
+        startSound = MediaPlayer.create(this, R.raw.start_sound);
+
+        startSound.setOnCompletionListener(MediaPlayer::release);
+
+        startSound.start();
     }
 
     protected void changeLanguageRender() {
@@ -84,5 +108,18 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setText(resources.getString(R.string.start));
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (startSound != null) {
+            startSound.release();
+            startSound = null;
+        }
+
+        if (transitionSound != null) {
+            transitionSound.release();
+            transitionSound = null;
+        }
+    }
 
 }

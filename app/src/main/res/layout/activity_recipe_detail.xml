@@ -33,6 +33,14 @@
                 android:lineSpacingExtra="4dp"
                 android:textSize="16sp" />
 
+            <Button
+                android:id="@+id/buttonPlayRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/play_recipe_voice"
+                android:visibility="gone" />
+
         </LinearLayout>
 
     </ScrollView>
