@@ -36,4 +36,6 @@
     <string name="playing">🔊 Reproduciendo...</string>
     <string name="voice_file_not_found">Archivo de voz no encontrado</string>
     <string name="voice_playback_error">Error al reproducir</string>
+    <string name="video_ready">Video listo</string>
+    <string name="video_error">Error al reproducir video</string>
 </resources>

@@ -35,4 +35,6 @@
     <string name="playing">🔊 Воспроизводится...</string>
     <string name="voice_file_not_found">Аудиофайл не найден</string>
     <string name="voice_playback_error">Ошибка воспроизведения</string>
+    <string name="video_ready">Видео готово</string>
+    <string name="video_error">Ошибка воспроизведения видео</string>
 </resources>

@@ -1,11 +1,14 @@
 package com.example.cookingrecipes;
 
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +25,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
     private MediaPlayer recipeVoicePlayer;
     private String currentRecipeName;
+    private VideoView videoViewRecipe;
+    private MediaController mediaController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.textViewName);
         textViewDetails = findViewById(R.id.textViewDetails);
         buttonPlayRecipe = findViewById(R.id.buttonPlayRecipe);
+        videoViewRecipe = findViewById(R.id.videoViewRecipe);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -53,8 +59,20 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         if (omeletteName.equals(currentRecipeName)) {
             buttonPlayRecipe.setVisibility(View.VISIBLE);
+            videoViewRecipe.setVisibility(View.VISIBLE);
+
+            Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.omlet_video);
+
+            videoViewRecipe.setVideoURI(videoUri);
+
+            mediaController = new MediaController(this);
+            videoViewRecipe.setMediaController(mediaController);
+            mediaController.setMediaPlayer(videoViewRecipe);
+            mediaController.setAnchorView(videoViewRecipe);
+
         } else {
             buttonPlayRecipe.setVisibility(View.GONE);
+            videoViewRecipe.setVisibility(View.GONE);
         }
 
         buttonPlayRecipe.setOnClickListener(v -> {
@@ -104,6 +122,17 @@ public class RecipeDetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         stopPlayback();
+    }
+
+    public void play(View view){
+        videoViewRecipe.start();
+    }
+    public void pause(View view){
+        videoViewRecipe.pause();
+    }
+    public void stop(View view){
+        videoViewRecipe.stopPlayback();
+        videoViewRecipe.resume();
     }
 
     private void stopPlayback() {

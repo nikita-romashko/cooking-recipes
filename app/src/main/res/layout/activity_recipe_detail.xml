@@ -41,6 +41,10 @@
                 android:text="@string/play_recipe_voice"
                 android:visibility="gone" />
 
+            <VideoView
+                android:id="@+id/videoViewRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
         </LinearLayout>
 
     </ScrollView>
