@@ -38,4 +38,14 @@
     <string name="voice_playback_error">Error al reproducir</string>
     <string name="video_ready">Video listo</string>
     <string name="video_error">Error al reproducir video</string>
+
+    <string name="timers_section_title">Temporizadores de cocina</string>
+    <string name="timer1_label">Temporizador de preparación (ajustable)</string>
+    <string name="timer2_label">Temporizador de salteado</string>
+    <string name="timer3_label">Temporizador de finalización</string>
+    <string name="timer_input_hint">Tiempo (mm:ss o hh:mm:ss)</string>
+    <string name="timer_start">Iniciar</string>
+    <string name="timer_pause">Pausar</string>
+    <string name="timer_reset">Reiniciar</string>
+    <string name="timer_invalid_format">Formato no válido. Usa mm:ss o hh:mm:ss</string>
 </resources>
